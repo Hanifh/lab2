@@ -41,10 +41,10 @@ void loop() {
   dis_R = dis_per_tick * (encoder_pre_R - encoder_pos_R);
   //////////////////////////////////////////////////////////////////
   // write your code
-
-  // theta = ???
-  // x = ??? 
-  // y = ???
+    d_theta = (dis_R-dis_L)*WIDTH;
+    theta = theta + d_theta;
+    x = x + 0.5 *( dis_R + dis_L)*cos(theta);
+    y = y + 0.5 *(dis_R+dis_L)*sin(theta);
 
   ///////////////////////////////////////////////////////////////////
   msg.data_length = 3;
