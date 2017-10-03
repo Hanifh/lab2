@@ -26,6 +26,34 @@ class Tracking:
 		theta = theta % (2* pi)
 		print x,y,theta
 
+		
+			
+			if self.state == 1:
+				#move forward in speed 
+				self.leftMotor.run(1);
+				self.rightMotor.run(1);
+				self.leftMotor.setSpeed(200);
+				self.rightMotor.setSpeed(200);
+				if x>1:
+					self.state = 2;
+					break;
+			elif self.state == 2:
+				#semi-circle
+				self.leftMotor.run(1);
+				self.rightMotor.run(1);
+				self.leftMotor.setSpeed(200);
+				self.rightMotor.setSpeed(50);
+				if theta>3.14
+					break;
+			else
+				#move forward in speed
+				self.leftMotor.run(1);
+				self.rightMotor.run(1);
+				self.leftMotor.setSpeed(200);
+				self.rightMotor.setSpeed(200);
+				if x<0:
+					break;
+		
 		# stages: 1) straight line,
 		#         2) semi-circle
 		#         3) straight line again.
